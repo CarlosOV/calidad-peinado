@@ -67,13 +67,21 @@ USE_ETAGS = True
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
+CORS_ORIGIN_WHITELIST = (
+        'consume-api-icip-carlosov.c9.io',
+    )
+
 AUTH_USER_MODEL = 'peinados.CustomUser'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbcalidad',
+        'USER': 'carlos',
+        'PASSWORD': 'carlosov',
+        'HOST': '',
+        'PORT': '',
+    },
 }
 
 REST_FRAMEWORK = {
